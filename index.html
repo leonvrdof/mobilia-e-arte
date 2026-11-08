@@ -631,7 +631,7 @@ footer.site a:hover{color:#fff;text-decoration:underline}
           <span class="ig-avatar" aria-hidden="true"><div><svg width="22" height="22" viewBox="0 0 26 26" fill="none"><path d="M4 21V6.5L13 4l9 2.5V21" stroke="#fff" stroke-width="2" stroke-linejoin="round"/><path d="M8 21V12h10v9" stroke="#F2B705" stroke-width="2"/></svg></div></span>
           <div class="stack" style="gap:4px">
             <h2>Trabalhos recentes</h2>
-            <p class="muted">Direto do nosso Instagram, <a href="https://www.instagram.com/mobiliaearte.moveis/">@mobiliaearte.moveis</a></p>
+            <p class="muted">Alguns trabalhos do nosso Instagram, <a href="https://www.instagram.com/mobiliaearte.moveis/">@mobiliaearte.moveis</a></p>
           </div>
         </div>
         <a class="btn btn-linha" href="https://www.instagram.com/mobiliaearte.moveis/">
@@ -663,7 +663,6 @@ footer.site a:hover{color:#fff;text-decoration:underline}
         <a class="btn btn-azul" href="https://share.google/wnYTbPwgZkuoFRdhv">Ver todas no Google</a>
         <a class="btn btn-linha" href="https://share.google/wnYTbPwgZkuoFRdhv">Deixar minha avaliação</a>
       </div>
-      <p class="rev-note">No site publicado, a nota e as avaliações são atualizadas automaticamente a partir do perfil no Google.</p>
     </div>
   </section>
 
@@ -980,7 +979,7 @@ footer.site a:hover{color:#fff;text-decoration:underline}
   var STAR = function(s){return '<svg aria-hidden="true" width="'+s+'" height="'+s+'" viewBox="0 0 24 24" fill="#F2B705"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3 6.1 20.6l1.3-6.6L2.5 9.4l6.6-.8z"/></svg>';};
   document.querySelectorAll('[data-stars]').forEach(function(el){ var s=el.getAttribute('data-stars'); el.innerHTML = STAR(s)+STAR(s)+STAR(s)+STAR(s)+STAR(s); });
 
-  // ---- Instagram (no site final: feed automático pela API do Instagram) ----
+  // ---- Instagram: fotos fixas, escolhidas do perfil (não atualizam sozinhas) ----
   var posts = [
     ['sala-painel-ripado','Sala com painel ripado e rack amadeirado'],
     ['cozinha-azul-corredor','Cozinha azul com torre amadeirada'],
@@ -996,7 +995,7 @@ footer.site a:hover{color:#fff;text-decoration:underline}
     return '<li><a href="https://www.instagram.com/mobiliaearte.moveis/" aria-label="'+p[1]+', ver no Instagram"><img src="img/'+p[0]+'.webp" alt="" loading="lazy" width="800" height="797"><span class="ov">'+igIcon+'</span></a></li>';
   }).join('');
 
-  // ---- Avaliações reais do Google (no site final: atualizadas pela API do Google) ----
+  // ---- Avaliações reais do Google: textos fixos, copiados do perfil (não atualizam sozinhos) ----
   var cores = ['#2F4A66','#8A5A2B','#3D6B57','#6B4A7A','#9A4B3D','#2F5E73'];
   var revs = [
     ['Sônia Rosalino','Local Guide, 35 avaliações','6 anos atrás','Melhor preço que achei na região, serviço executado dentro do prazo estipulado pela empresa, acabamento excelente eu recomendo.'],
