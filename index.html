@@ -998,12 +998,12 @@ footer.site a:hover{color:#fff;text-decoration:underline}
   // ---- Avaliações reais do Google: textos fixos, copiados do perfil (não atualizam sozinhos) ----
   var cores = ['#2F4A66','#8A5A2B','#3D6B57','#6B4A7A','#9A4B3D','#2F5E73'];
   var revs = [
-    ['Sônia Rosalino','Local Guide, 35 avaliações','6 anos atrás','Melhor preço que achei na região, serviço executado dentro do prazo estipulado pela empresa, acabamento excelente eu recomendo.'],
-    ['Vitoria Jenner','Local Guide, 13 avaliações','7 anos atrás','Gostei muito do serviço, achei que o material é de qualidade e o principal, o acabamento ficou ótimo! Achei o preço muito bom pelo que me entregaram.'],
     ['Leticia Duarte','9 avaliações','5 meses atrás','Fez todos os móveis da minha casa, ótimo atendimento e qualidade.'],
     ['Letícia Di Beo','6 avaliações','1 ano atrás','O melhor marceneiro da região! Indico de olhos fechados!'],
-    ['Patrícia Queiroz','Local Guide, 40 avaliações','7 anos atrás','Ótimo serviço e o preço é condizente com o que entregam!'],
-    ['V A','Local Guide, 52 avaliações','1 ano atrás','Trabalho bom, honesto e bem feito.']
+    ['V A','Local Guide, 52 avaliações','1 ano atrás','Trabalho bom, honesto e bem feito.'],
+    ['Sônia Rosalino','Local Guide, 35 avaliações','6 anos atrás','Melhor preço que achei na região, serviço executado dentro do prazo estipulado pela empresa, acabamento excelente eu recomendo.'],
+    ['Vitoria Jenner','Local Guide, 13 avaliações','7 anos atrás','Gostei muito do serviço, achei que o material é de qualidade e o principal, o acabamento ficou ótimo! Achei o preço muito bom pelo que me entregaram.'],
+    ['Patrícia Queiroz','Local Guide, 40 avaliações','7 anos atrás','Ótimo serviço e o preço é condizente com o que entregam!']
   ];
   document.getElementById('reviews').innerHTML = revs.map(function(r,i){
     var ini = r[0].split(' ').map(function(w){return w[0];}).slice(0,2).join('');
