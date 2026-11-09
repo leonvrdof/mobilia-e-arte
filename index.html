@@ -325,6 +325,12 @@ dl.horas dt{color:var(--cinza)} dl.horas dd{margin:0;font-weight:600;white-space
 .comp-dica{margin:0;color:var(--texto-suave);font-size:1rem}
 .comparar-hero{justify-self:end}
 @media (max-width:1024px){.comparar-hero{justify-self:center}}
+@media (min-width:1025px){
+  .hero-grid{align-items:start}
+  .comparar-hero{width:clamp(360px,calc((100vh - 330px) * .8),460px)}
+  .comparar-hero .comp-area{aspect-ratio:4/5}
+  .comparar-hero .comp-leg{min-height:0}
+}
 .comp-leg{color:var(--texto-suave);font-size:1rem;line-height:1.5;min-height:3em}
 .comp-btn{flex:1;min-height:44px;border-radius:999px;border:1px solid var(--borda);background:var(--superficie);color:var(--texto);font:inherit;font-size:1rem;font-weight:600;cursor:pointer}
 .comp-btn:hover{border-color:var(--primaria);color:var(--primaria)}
@@ -345,7 +351,7 @@ dl.horas dt{color:var(--cinza)} dl.horas dd{margin:0;font-weight:600;white-space
 @media (max-width:768px){.cta-final{grid-template-columns:1fr;grid-template-areas:"texto" "lista" "botao";padding:36px 24px;row-gap:24px}.cta-lista{padding:4px 16px}.cta-lista .ic{width:44px;height:44px}.cta-botao{justify-self:stretch}}
 
 /* ---------- páginas internas ---------- */
-.page-hero{padding:48px 0 56px;background:var(--nevoa);border-bottom:1px solid var(--linha)}
+.page-hero{padding:56px 0 72px;background:var(--nevoa);border-bottom:1px solid var(--linha)}
 .crumb{font-size:.875rem;color:var(--cinza);margin-bottom:16px}
 .crumb a{color:var(--cinza);display:inline-flex;align-items:center;min-height:24px}
 .chips-nav{list-style:none;margin:28px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
@@ -386,6 +392,7 @@ dl.horas dt{color:var(--cinza)} dl.horas dd{margin:0;font-weight:600;white-space
 .reforma-hero{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:56px;align-items:center}
 @media (max-width:1024px){.reforma-hero{grid-template-columns:1fr}}
 .reforma-hero > img{border-radius:18px;aspect-ratio:5/4;object-fit:cover;width:100%}
+@media (min-width:1025px){.reforma-hero{align-items:start}}
 .amb-hero .carrossel{aspect-ratio:5/4}
 @media (max-width:600px){.amb-hero .carrossel{aspect-ratio:4/3.4}}
 
@@ -1215,6 +1222,7 @@ footer.site a:hover{color:#fff;text-decoration:underline}
     var rotA = fig.querySelector('.comp-rot-antes'), rotD = fig.querySelector('.comp-rot-depois');
     function etiquetas(v){
       var w = area.clientWidth, folga = 12;
+      if (!w) { rotA.classList.remove('oculto'); rotD.classList.remove('oculto'); return; }
       var espA = w * v / 100, espD = w * (100 - v) / 100;
       rotA.classList.toggle('oculto', espA < rotA.offsetLeft + rotA.offsetWidth + folga);
       rotD.classList.toggle('oculto', espD < (w - rotD.offsetLeft) + folga);
@@ -1246,7 +1254,8 @@ footer.site a:hover{color:#fff;text-decoration:underline}
     function fim(){ ini = null; }
     area.addEventListener('pointerup', fim); area.addEventListener('pointercancel', fim);
     exemplo('cozinha');
-    window.addEventListener('resize', function(){ etiquetas(+r.value); });
+    if (window.ResizeObserver) new ResizeObserver(function(){ etiquetas(+r.value); }).observe(area);
+    else window.addEventListener('resize', function(){ etiquetas(+r.value); });
   });
 
   // ---- Menu no celular ----
