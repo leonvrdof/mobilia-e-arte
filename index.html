@@ -482,6 +482,9 @@ footer.site a:hover{color:#fff;text-decoration:underline}
 /* ---------- WhatsApp flutuante ---------- */
 .zap-flutuante{position:fixed;right:24px;bottom:24px;z-index:var(--z-flutuante);display:flex;align-items:center;justify-content:center;gap:0;height:60px;min-width:60px;padding:0 16px;border-radius:999px;background:var(--zap);color:#fff;text-decoration:none;box-shadow:0 14px 30px -10px rgba(15,98,54,.65);font-weight:600;transition:background var(--dur-rapida)}
 .zap-flutuante:hover{background:var(--zap-esc);color:#fff}
+.zap-flutuante{transition:opacity var(--dur-media) var(--entrar),transform var(--dur-media) var(--entrar),visibility 0s}
+.zap-flutuante.escondido{opacity:0;transform:translateY(16px);visibility:hidden;pointer-events:none;transition:opacity var(--dur-curta, .15s) ease-in,transform var(--dur-curta, .15s) ease-in,visibility 0s linear var(--dur-curta, .15s)}
+@media (prefers-reduced-motion:reduce){.zap-flutuante,.zap-flutuante.escondido{transition:none;transform:none}}
 .zap-flutuante svg{flex-shrink:0;width:26px;height:26px}
 .zap-flutuante .rot{max-width:0;overflow:hidden;white-space:nowrap;transition:max-width var(--dur-media) var(--entrar),margin var(--dur-media)}
 .zap-flutuante:hover .rot,.zap-flutuante:focus-visible .rot{max-width:220px;margin-left:8px}
@@ -1257,6 +1260,13 @@ footer.site a:hover{color:#fff;text-decoration:underline}
     if (window.ResizeObserver) new ResizeObserver(function(){ etiquetas(+r.value); }).observe(area);
     else window.addEventListener('resize', function(){ etiquetas(+r.value); });
   });
+
+  // ---- Botão flutuante do WhatsApp: aparece depois do topo (o cabeçalho já tem o botão) ----
+  (function(){
+    var fab = document.querySelector('.zap-flutuante'); if (!fab) return;
+    function atualiza(){ fab.classList.toggle('escondido', window.scrollY < 400); }
+    atualiza(); window.addEventListener('scroll', atualiza, {passive:true}); window.addEventListener('hashchange', function(){ setTimeout(atualiza, 50); });
+  })();
 
   // ---- Menu no celular ----
   var menuBtn = document.querySelector('.menu-btn'), menu = document.getElementById('menu');
