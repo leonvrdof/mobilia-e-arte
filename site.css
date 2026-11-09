@@ -189,6 +189,10 @@ nav.main a[aria-current="page"]{background:var(--azul-claro);color:var(--azul-es
 .insta a .ov{position:absolute;inset:0;display:grid;place-items:center;background:rgba(20,28,38,.45);opacity:0;transition:opacity var(--dur-media);color:#fff}
 .insta a:hover .ov,.insta a:focus-visible .ov{opacity:1}
 .ig-perfil{display:flex;align-items:center;gap:16px}
+.ig-txt{display:flex;flex-direction:column;gap:2px;min-width:0}
+.ig-handle{font-weight:700;font-size:1.125rem;color:var(--texto);text-decoration:none;overflow-wrap:anywhere;align-self:flex-start;padding:2px 0}
+.ig-desc{font-size:1rem}
+.ig-handle:hover{text-decoration:underline;text-underline-offset:3px}
 .ig-avatar{flex-shrink:0;width:56px;height:56px;border-radius:50%;padding:4px;background:conic-gradient(#F2B705,#E1306C,#833AB4,#F2B705)}
 .ig-avatar div{width:100%;height:100%;border-radius:50%;border:3px solid #fff;background:var(--azul);display:grid;place-items:center}
 
