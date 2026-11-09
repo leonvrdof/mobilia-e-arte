@@ -475,3 +475,9 @@ footer.site a:hover{color:#fff;text-decoration:underline}
 .zap-flutuante .rot{max-width:0;overflow:hidden;white-space:nowrap;transition:max-width var(--dur-media) var(--entrar),margin var(--dur-media)}
 .zap-flutuante:hover .rot,.zap-flutuante:focus-visible .rot{max-width:220px;margin-left:8px}
 @media (max-width:600px){.zap-flutuante{right:16px;bottom:16px;height:58px;min-width:58px;padding:0 16px}}
+
+/* Sobretítulo (rótulo pequeno acima do h1) e linha de chamada no meio da página */
+.sobretitulo{margin:0;font-size:1rem;font-weight:600;color:var(--primaria);letter-spacing:.01em}
+.cta-linha{display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px;margin-top:var(--e7)}
+.cta-linha p{margin:0;font-size:1rem}
+@media (max-width:600px){.cta-linha .btn{flex:1 1 100%}}
