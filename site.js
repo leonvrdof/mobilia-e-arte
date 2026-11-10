@@ -30,7 +30,8 @@
     ['Vitoria Jenner','Local Guide, 13 avaliações','7 anos atrás','Gostei muito do serviço, achei que o material é de qualidade e o principal, o acabamento ficou ótimo! Achei o preço muito bom pelo que me entregaram.'],
     ['Patrícia Queiroz','Local Guide, 42 avaliações','7 anos atrás','Ótimo serviço e o preço é condizente com o que entregam!']
   ];
-  porId('reviews').innerHTML = revs.map(function(r,i){
+  var revEl = porId('reviews'), revMax = +revEl.getAttribute('data-max') || revs.length;
+  revEl.innerHTML = revs.slice(0, revMax).map(function(r,i){
     var ini = r[0].split(' ').map(function(w){return w[0];}).slice(0,2).join('');
     return '<figure class="rev"><header><span class="av" aria-hidden="true" style="background:'+cores[i%cores.length]+'">'+ini+'</span><div><strong>'+r[0]+'</strong><span>'+r[1]+'</span></div></header>'+
       '<span class="stars" role="img" aria-label="5 de 5 estrelas">'+STAR(16)+STAR(16)+STAR(16)+STAR(16)+STAR(16)+'</span>'+
@@ -158,7 +159,7 @@
   // ---- Páginas: marca no menu a página atual e leva links antigos (#reforma) para o endereço novo ----
   var PAGINA = document.body.getAttribute('data-pagina');
   var ANTIGOS = {inicio:'/', reforma:'/reforma-e-conserto/', ambientes:'/moveis-novos/', trabalhos:'/trabalhos/', orcamento:'/',
-    cozinha:'/moveis-novos/#cozinha', sala:'/moveis-novos/#sala', quarto:'/moveis-novos/#quarto', banheiro:'/moveis-novos/#banheiro', outros:'/moveis-novos/#outros'};
+    avaliacoes:'/avaliacoes/', cozinha:'/moveis-novos/cozinha/', sala:'/moveis-novos/sala/', quarto:'/moveis-novos/quarto-e-closet/', banheiro:'/moveis-novos/banheiro/', outros:'/moveis-novos/area-de-servico-e-escritorio/'};
   var h = (location.hash || '').slice(1);
   if (ANTIGOS[h] && ANTIGOS[h].split('#')[0] !== location.pathname) { location.replace(ANTIGOS[h]); return; }
   document.querySelectorAll('[data-nav]').forEach(function(a){
