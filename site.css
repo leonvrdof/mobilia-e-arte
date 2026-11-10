@@ -205,6 +205,7 @@ nav.main a[aria-current="page"]{background:var(--azul-claro);color:var(--azul-es
 .rev header div{display:flex;flex-direction:column;line-height:1.25}
 .rev header strong{font-weight:600}
 .rev header span{font-size:.875rem;color:var(--cinza)}
+.rev header .av{color:#fff;font-size:1rem}
 .rev blockquote{margin:0;font-size:1rem;line-height:1.55}
 .rev .meta{display:flex;justify-content:space-between;align-items:center;margin-top:auto;font-size:.875rem;color:var(--cinza)}
 
