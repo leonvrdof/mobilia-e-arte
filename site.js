@@ -15,7 +15,8 @@
     ['cozinha-azul','Cozinha com armários azuis e bancada preta']
   ];
   var igIcon = '<svg aria-hidden="true" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg>';
-  porId('insta').innerHTML = posts.map(function(p){
+  var igEl = porId('insta'), igMax = +igEl.getAttribute('data-max') || posts.length;
+  igEl.innerHTML = posts.slice(0, igMax).map(function(p){
     return '<li><a href="https://www.instagram.com/mobiliaearte.moveis/" aria-label="'+p[1]+', ver no Instagram"><img src="/img/'+p[0]+'.webp" alt="" loading="lazy" width="800" height="797"><span class="ov">'+igIcon+'</span></a></li>';
   }).join('');
 
@@ -156,7 +157,7 @@
 
   // ---- Páginas: marca no menu a página atual e leva links antigos (#reforma) para o endereço novo ----
   var PAGINA = document.body.getAttribute('data-pagina');
-  var ANTIGOS = {inicio:'/', reforma:'/reforma-e-conserto/', ambientes:'/moveis-novos/', orcamento:'/',
+  var ANTIGOS = {inicio:'/', reforma:'/reforma-e-conserto/', ambientes:'/moveis-novos/', trabalhos:'/trabalhos/', orcamento:'/',
     cozinha:'/moveis-novos/#cozinha', sala:'/moveis-novos/#sala', quarto:'/moveis-novos/#quarto', banheiro:'/moveis-novos/#banheiro', outros:'/moveis-novos/#outros'};
   var h = (location.hash || '').slice(1);
   if (ANTIGOS[h] && ANTIGOS[h].split('#')[0] !== location.pathname) { location.replace(ANTIGOS[h]); return; }
