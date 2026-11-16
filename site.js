@@ -28,7 +28,7 @@
     ['V A','Local Guide, 52 avaliações','1 ano atrás','Trabalho bom, honesto e bem feito.'],
     ['Sônia Rosalino','Local Guide, 35 avaliações','6 anos atrás','Melhor preço que achei na região, serviço executado dentro do prazo estipulado pela empresa, acabamento excelente eu recomendo.'],
     ['Vitoria Jenner','Local Guide, 13 avaliações','7 anos atrás','Gostei muito do serviço, achei que o material é de qualidade e o principal, o acabamento ficou ótimo! Achei o preço muito bom pelo que me entregaram.'],
-    ['Patrícia Queiroz','Local Guide, 42 avaliações','7 anos atrás','Ótimo serviço e o preço é condizente com o que entregam!']
+    ['Patrícia Queiroz','Local Guide, 43 avaliações','7 anos atrás','Ótimo serviço e o preço é condizente com o que entregam!']
   ];
   var revEl = porId('reviews'), revMax = +revEl.getAttribute('data-max') || revs.length;
   revEl.innerHTML = revs.slice(0, revMax).map(function(r,i){
